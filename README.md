@@ -1,6 +1,12 @@
-📦 Register-Login Authentication Backend
-This is a Node.js + Express + MongoDB backend for a simple Register-Login System. It handles user registration, login, and basic user management.
-📁 Project Structure
+# Register-Login Authentication Backend
+
+This is a **Node.js + Express + MongoDB** backend for a simple Register-Login System. It handles user registration, login, and basic user management efficiently and securely.
+
+---
+
+## 📁 Project Structure
+
+```
 register-login-auth-backend/
 ├── node_modules/          # Dependencies
 ├── config/
@@ -13,56 +19,77 @@ register-login-auth-backend/
 ├── .gitignore             # Ignore files
 ├── package.json           # Project metadata and scripts
 └── server.js              # Main application entry point
+```
 
-🚀 Features
-✅ User Registration (Name, Email, Phone, Password)
-✅ User Login (Email, Password)
-✅ Password Hashing (Using bcryptjs)
-✅ JWT Token Generation (For user authentication)
+---
 
-🛠️ Technologies Used
-Node.js – JavaScript runtime environment
-Express.js – Web framework for Node.js
-MongoDB – NoSQL database for data storage
-Mongoose – MongoDB object modeling for Node.js
-bcryptjs – For securely hashing passwords
-jsonwebtoken (JWT) – For generating access tokens
-dotenv – For managing environment variables
+## 🚀 Features
 
-📌 Getting Started
-1. Clone the Repository
+✅ **User Registration** (Name, Email, Phone, Password)<br>
+✅ **User Login** (Email, Password)<br>
+✅ **Password Hashing** (Using `bcryptjs`)<br>
+✅ **JWT Token Generation** (For user authentication)<br>
+
+---
+
+## 🛠️ Technologies Used
+
+- **Node.js**: JavaScript runtime environment.
+- **Express.js**: Web framework for Node.js.
+- **MongoDB**: NoSQL database for data storage.
+- **Mongoose**: MongoDB object modeling for Node.js.
+- **bcryptjs**: For securely hashing passwords.
+- **jsonwebtoken (JWT)**: For generating access tokens.
+- **dotenv**: For managing environment variables.
+
+---
+
+## 📌 Getting Started
+
+### 1. Clone the Repository
+```bash
 git clone https://github.com/your-username/register-login-auth.git
 cd register-login-auth-backend
+```
 
-2. Install Dependencies
-   npm install
-   
-4. Set Up Environment Variables
-Create a .env file in the root directory and add the following:
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Set Up Environment Variables
+Create a `.env` file in the root directory and add the following:
+```
 MONGO_URI=mongodb://localhost:27017/registerlogin-auth
 JWT_SECRET=your_secret_key
 PORT=5000
+```
 
-4. Start the Server
-   npm run dev
+### 4. Start the Server
+```bash
+npm run dev
+```
 
-📊 API Endpoints
-Method	  Endpoint	      Description	                Access
-POST     /api/register  	Register a new user	        Public
-POST	   /api/login	      User login (JWT token)	    Public
+---
 
-🔍 Usage Examples
-📌 1. Register a New User
-Request:
-POST /api/register
-Content-Type: application/json
+## 📊 API Endpoints
+
+### **1. Register a New User**
+**Endpoint**: `POST /api/register`<br>
+**Access**: Public
+
+#### Request
+```json
 {
   "name": "Bablu Dangi",
   "email": "babludangi2000@gmail.com",
   "phone": "1234567890",
   "password": "12345"
 }
-Response:
+```
+
+#### Response
+```json
 {
   "message": "User registered successfully",
   "user": {
@@ -73,16 +100,24 @@ Response:
     "token": "your_jwt_token"
   }
 }
+```
 
-📌 2. User Login
-Request:POST /api/login
-Content-Type: application/json
+---
+
+### **2. User Login**
+**Endpoint**: `POST /api/login`<br>
+**Access**: Public
+
+#### Request
+```json
 {
-"email": "babludangi2000@gmail.com",
-"password": "12345"
+  "email": "babludangi2000@gmail.com",
+  "password": "12345"
 }
+```
 
-Response:
+#### Response
+```json
 {
   "message": "Login successful",
   "user": {
@@ -93,7 +128,4 @@ Response:
     "token": "your_jwt_token"
   }
 }
-
-
-
 
